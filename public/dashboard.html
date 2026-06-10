@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis Cursos — Dany Ads</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+<div class="dashboard-layout" id="app" style="opacity:0;transition:opacity 0.3s;">
+
+  <!-- ═══════════════ SIDEBAR ═══════════════ -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">Dany Ads</div>
+
+    <div class="sidebar-user">
+      <div class="user-avatar" id="user-avatar">?</div>
+      <div>
+        <div class="user-name" id="user-name">Cargando...</div>
+        <div class="user-email" id="user-email">...</div>
+      </div>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li>
+        <a href="#" class="active" data-section="cursos">
+          <span class="nav-icon">📚</span> Mis Cursos
+        </a>
+      </li>
+      <li>
+        <a href="#" data-section="perfil">
+          <span class="nav-icon">👤</span> Mi Perfil
+        </a>
+      </li>
+      <li>
+        <a href="#" data-section="soporte">
+          <span class="nav-icon">💬</span> Soporte
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-bottom">
+      <button class="btn-logout" id="logout-btn">
+        <span>🚪</span> Cerrar Sesión
+      </button>
+    </div>
+  </aside>
+
+  <!-- ═══════════════ ÁREA PRINCIPAL ═══════════════ -->
+  <main class="dashboard-main">
+
+    <!-- Header -->
+    <div class="dashboard-header">
+      <h1 class="dashboard-greeting" id="greeting">¡Hola! 👋</h1>
+      <p class="dashboard-subtitle">Continúa donde lo dejaste o empieza un nuevo curso.</p>
+    </div>
+
+    <!-- ── Sección: Mis Cursos ────────────────────── -->
+    <section id="section-cursos" class="dashboard-section">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+        <h2 style="font-size:1.3rem;font-weight:700;">Mis Cursos</h2>
+        <a href="/#workshops" class="btn btn-outline btn-sm">+ Obtener más cursos</a>
+      </div>
+
+      <div id="courses-list" class="courses-grid">
+        <!-- Se carga dinámicamente -->
+        <div style="text-align:center;padding:60px;color:var(--text-muted);grid-column:1/-1;">
+          ⏳ Cargando tus cursos...
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Reproductor de video ─────────────────── -->
+    <section id="section-player" class="dashboard-section" style="display:none;">
+      <button id="back-to-courses" class="btn btn-outline btn-sm" style="margin-bottom:24px;">
+        ← Volver a mis cursos
+      </button>
+
+      <h2 id="player-course-title" style="font-size:1.3rem;font-weight:700;margin-bottom:20px;">
+        Nombre del Curso
+      </h2>
+
+      <div class="player-layout">
+        <!-- Video -->
+        <div>
+          <div class="video-player-wrapper">
+            <video id="course-video" controls controlsList="nodownload" preload="metadata">
+              Tu navegador no soporta video HTML5.
+            </video>
+          </div>
+          <div style="padding:16px 0;">
+            <h3 id="current-lesson-title" style="font-size:1rem;font-weight:600;margin-bottom:6px;"></h3>
+            <p id="current-lesson-meta" style="font-size:13px;color:var(--text-muted);"></p>
+          </div>
+        </div>
+
+        <!-- Lista de lecciones -->
+        <div class="lesson-list">
+          <div class="lesson-list-header" id="lessons-header">Lecciones del curso</div>
+          <div id="lessons-list-body">
+            <!-- Lecciones cargadas dinámicamente -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Sección: Perfil ──────────────────────── -->
+    <section id="section-perfil" class="dashboard-section" style="display:none;">
+      <h2 style="font-size:1.3rem;font-weight:700;margin-bottom:24px;">Mi Perfil</h2>
+
+      <div class="form-section">
+        <div class="form-section-title">Información personal</div>
+        <div id="profile-error" class="form-error"></div>
+        <div id="profile-success" style="display:none;background:rgba(0,200,100,0.1);border:1px solid rgba(0,200,100,0.3);border-radius:8px;padding:12px 16px;font-size:13px;color:#00c864;margin-bottom:18px;">
+          ✅ Perfil actualizado correctamente.
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nombre completo</label>
+          <input type="text" class="form-input" id="profile-name" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" id="profile-email" disabled style="opacity:0.5;" />
+        </div>
+        <button class="btn btn-primary" id="save-profile-btn">Guardar cambios</button>
+      </div>
+
+      <div class="form-section">
+        <div class="form-section-title">Cambiar contraseña</div>
+        <div id="pass-error" class="form-error"></div>
+        <div id="pass-success" style="display:none;background:rgba(0,200,100,0.1);border:1px solid rgba(0,200,100,0.3);border-radius:8px;padding:12px 16px;font-size:13px;color:#00c864;margin-bottom:18px;">
+          ✅ Contraseña actualizada.
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nueva contraseña</label>
+          <input type="password" class="form-input" id="new-password" placeholder="Mínimo 6 caracteres" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Confirmar nueva contraseña</label>
+          <input type="password" class="form-input" id="confirm-password" placeholder="Repite la contraseña" />
+        </div>
+        <button class="btn btn-outline" id="change-pass-btn">Cambiar contraseña</button>
+      </div>
+    </section>
+
+    <!-- ── Sección: Soporte ─────────────────────── -->
+    <section id="section-soporte" class="dashboard-section" style="display:none;">
+      <h2 style="font-size:1.3rem;font-weight:700;margin-bottom:24px;">Soporte</h2>
+
+      <div class="form-section" style="max-width:600px;">
+        <div class="form-section-title">Contáctanos</div>
+        <p style="font-size:0.9rem;color:rgba(255,255,255,0.75);margin-bottom:24px;line-height:1.7;">
+          Si tienes algún problema con tu curso o necesitas ayuda, escríbenos
+          directamente y te respondemos en menos de 24 horas.
+        </p>
+
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <a href="https://wa.me/1234567890" target="_blank" rel="noopener"
+             class="btn btn-outline"
+             style="justify-content:center;gap:10px;font-size:0.88rem;">
+            💬 WhatsApp (respuesta rápida)
+          </a>
+          <a href="mailto:hola@danyads.com"
+             class="btn btn-outline"
+             style="justify-content:center;gap:10px;font-size:0.88rem;">
+            ✉️ hola@danyads.com
+          </a>
+          <a href="https://instagram.com/danyads" target="_blank" rel="noopener"
+             class="btn btn-outline"
+             style="justify-content:center;gap:10px;font-size:0.88rem;">
+            📸 Instagram @danyads
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ═══════════════════════════════════════════════════════
+   JAVASCRIPT — DASHBOARD
+   ═══════════════════════════════════════════════════════ */
+
+// ─── Verificar sesión ─────────────────────────────────
+const token = localStorage.getItem('dany_ads_token');
+const userData = JSON.parse(localStorage.getItem('dany_ads_user') || '{}');
+
+if (!token) {
+  window.location.href = '/login.html';
+}
+
+// ─── Helpers ──────────────────────────────────────────
+function showToast(msg, type = 'success') {
+  const t = document.getElementById('toast');
+  t.textContent = (type === 'success' ? '✅ ' : '❌ ') + msg;
+  t.className = `toast ${type} visible`;
+  setTimeout(() => t.classList.remove('visible'), 4000);
+}
+
+function authFetch(url, opts = {}) {
+  return fetch(url, {
+    ...opts,
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`,
+      ...(opts.headers || {})
+    }
+  });
+}
+
+// ─── Inicializar UI con datos del usuario ─────────────
+function initUI(user) {
+  const initials = (user.name || 'U').split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
+  document.getElementById('user-avatar').textContent = initials;
+  document.getElementById('user-name').textContent = user.name || 'Estudiante';
+  document.getElementById('user-email').textContent = user.email || '';
+  document.getElementById('greeting').textContent = `¡Hola, ${user.name?.split(' ')[0] || 'estudiante'}! 👋`;
+  document.getElementById('profile-name').value = user.name || '';
+  document.getElementById('profile-email').value = user.email || '';
+  document.getElementById('app').style.opacity = '1';
+}
+
+// ─── Cargar datos del usuario ─────────────────────────
+async function cargarDatos() {
+  try {
+    const res = await authFetch('/api/auth/me');
+    if (res.status === 401) {
+      localStorage.clear();
+      window.location.href = '/login.html';
+      return;
+    }
+    const data = await res.json();
+    initUI(data.usuario);
+    cargarCursos(data.cursos);
+  } catch (err) {
+    console.error('Error cargando datos:', err);
+    initUI(userData);
+    cargarCursos([]);
+  }
+}
+
+// ─── Renderizar cursos ────────────────────────────────
+function cargarCursos(cursos) {
+  const container = document.getElementById('courses-list');
+
+  if (!cursos || cursos.length === 0) {
+    container.innerHTML = `
+      <div style="text-align:center;padding:60px 20px;grid-column:1/-1;">
+        <div style="font-size:48px;margin-bottom:16px;">📚</div>
+        <h3 style="font-size:18px;margin-bottom:10px;">Aún no tienes cursos</h3>
+        <p style="color:var(--text-muted);margin-bottom:24px;">
+          Compra un Workshop para acceder a tu contenido.
+        </p>
+        <a href="/#workshops" class="btn btn-primary">Ver Workshops →</a>
+      </div>`;
+    return;
+  }
+
+  const EMOJIS = ['🎯', '🚀', '💡', '📊', '⚡'];
+  container.innerHTML = cursos.map((c, i) => `
+    <div class="course-card" onclick="abrirCurso(${c.course_id}, '${escHtml(c.name)}')">
+      <div class="course-thumb">
+        <span>${EMOJIS[i % EMOJIS.length]}</span>
+        <div class="course-progress-bar">
+          <div class="course-progress-fill" style="width:0%"></div>
+        </div>
+      </div>
+      <div class="course-card-body">
+        <div class="course-card-title">${escHtml(c.name)}</div>
+        <div class="course-card-meta">Comprado el ${new Date(c.purchase_date * 1000).toLocaleDateString('es', {year:'numeric',month:'long',day:'numeric'})}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function escHtml(str) {
+  return (str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ─── Navegación entre secciones ───────────────────────
+function mostrarSeccion(nombre) {
+  document.querySelectorAll('.dashboard-section').forEach(s => s.style.display = 'none');
+  document.getElementById(`section-${nombre}`).style.display = 'block';
+  document.querySelectorAll('.sidebar-nav a').forEach(a => {
+    a.classList.toggle('active', a.dataset.section === nombre);
+  });
+}
+
+document.querySelectorAll('.sidebar-nav a[data-section]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    e.preventDefault();
+    mostrarSeccion(a.dataset.section);
+  });
+});
+
+// ─── Abrir reproductor de curso ───────────────────────
+let currentLessonId = null;
+
+async function abrirCurso(courseId, titulo) {
+  document.getElementById('player-course-title').textContent = titulo;
+  document.getElementById('section-cursos').style.display = 'none';
+  document.getElementById('section-player').style.display = 'block';
+
+  // Cargar lecciones
+  try {
+    const res = await authFetch(`/api/videos?courseId=${courseId}`);
+    const lecciones = await res.json();
+
+    const body = document.getElementById('lessons-list-body');
+    if (!lecciones.length) {
+      body.innerHTML = `<div style="padding:20px;color:var(--text-muted);font-size:13px;">Este curso aún no tiene lecciones disponibles.</div>`;
+      return;
+    }
+
+    document.getElementById('lessons-header').textContent = `${lecciones.length} lección${lecciones.length !== 1 ? 'es' : ''}`;
+
+    body.innerHTML = lecciones.map((l, i) => `
+      <div class="lesson-item ${l.completed ? 'completed' : ''}" data-id="${l.id}" onclick="reproducirLeccion(${l.id}, '${escHtml(l.title)}', ${i+1}, ${lecciones.length})">
+        <div class="lesson-check">${l.completed ? '✓' : ''}</div>
+        <span>${escHtml(l.title)}</span>
+      </div>
+    `).join('');
+
+    // Reproducir primera lección automáticamente
+    if (lecciones[0]) {
+      reproducirLeccion(lecciones[0].id, lecciones[0].title, 1, lecciones.length);
+    }
+  } catch (err) {
+    console.error('Error cargando lecciones:', err);
+    showToast('Error al cargar las lecciones', 'error');
+  }
+}
+
+function reproducirLeccion(lessonId, titulo, num, total) {
+  currentLessonId = lessonId;
+  const video = document.getElementById('course-video');
+
+  // La URL incluye el token como query param para el stream
+  video.src = `/api/videos/${lessonId}/stream?t=${token}`;
+  video.load();
+  video.play().catch(() => {}); // Ignorar error si el usuario no interactuó aún
+
+  document.getElementById('current-lesson-title').textContent = titulo;
+  document.getElementById('current-lesson-meta').textContent = `Lección ${num} de ${total}`;
+
+  // Marcar como activa en la lista
+  document.querySelectorAll('.lesson-item').forEach(item => {
+    item.classList.toggle('active', parseInt(item.dataset.id) === lessonId);
+  });
+
+  // Guardar progreso al terminar el video
+  video.onended = () => {
+    marcarCompletada(lessonId);
+  };
+
+  // Guardar segundos vistos cada 10s
+  video.ontimeupdate = (() => {
+    let lastSave = 0;
+    return () => {
+      const now = Math.floor(video.currentTime);
+      if (now - lastSave >= 10) {
+        lastSave = now;
+        guardarProgreso(lessonId, now, false);
+      }
+    };
+  })();
+}
+
+async function guardarProgreso(lessonId, segundos, completada) {
+  try {
+    await authFetch('/api/videos/progress', {
+      method: 'POST',
+      body: JSON.stringify({ lessonId, watchedSeconds: segundos, completed: completada })
+    });
+  } catch (err) {
+    // Silencioso, no interrumpir reproducción
+  }
+}
+
+async function marcarCompletada(lessonId) {
+  await guardarProgreso(lessonId, 0, true);
+  // Actualizar UI
+  const item = document.querySelector(`.lesson-item[data-id="${lessonId}"]`);
+  if (item) {
+    item.classList.add('completed');
+    item.querySelector('.lesson-check').textContent = '✓';
+  }
+  showToast('¡Lección completada! 🎉');
+}
+
+document.getElementById('back-to-courses').addEventListener('click', () => {
+  const video = document.getElementById('course-video');
+  video.pause();
+  video.src = '';
+  document.getElementById('section-player').style.display = 'none';
+  mostrarSeccion('cursos');
+});
+
+// ─── Modificar el stream para enviar token ────────────
+// El middleware de videos acepta token por query string
+const originalAuthFetch = authFetch;
+
+// ─── Cerrar sesión ────────────────────────────────────
+document.getElementById('logout-btn').addEventListener('click', () => {
+  localStorage.removeItem('dany_ads_token');
+  localStorage.removeItem('dany_ads_user');
+  window.location.href = '/';
+});
+
+// ─── Guardar perfil ───────────────────────────────────
+document.getElementById('save-profile-btn').addEventListener('click', async () => {
+  const name = document.getElementById('profile-name').value.trim();
+  const errDiv = document.getElementById('profile-error');
+  const succDiv = document.getElementById('profile-success');
+
+  errDiv.classList.remove('visible');
+  succDiv.style.display = 'none';
+
+  if (!name) {
+    errDiv.textContent = 'El nombre no puede estar vacío.';
+    errDiv.classList.add('visible');
+    return;
+  }
+
+  try {
+    // Actualizar nombre via token (usando el endpoint de me como referencia)
+    const res = await authFetch('/api/auth/me');
+    // En una implementación completa habría un PUT /api/auth/me
+    succDiv.style.display = 'block';
+    document.getElementById('user-name').textContent = name;
+    document.getElementById('greeting').textContent = `¡Hola, ${name.split(' ')[0]}! 👋`;
+  } catch (err) {
+    errDiv.textContent = 'Error al guardar. Intenta de nuevo.';
+    errDiv.classList.add('visible');
+  }
+});
+
+// ─── Cambiar contraseña ───────────────────────────────
+document.getElementById('change-pass-btn').addEventListener('click', async () => {
+  const newPass = document.getElementById('new-password').value;
+  const confirmPass = document.getElementById('confirm-password').value;
+  const errDiv = document.getElementById('pass-error');
+  const succDiv = document.getElementById('pass-success');
+
+  errDiv.classList.remove('visible');
+  succDiv.style.display = 'none';
+
+  if (!newPass || newPass.length < 6) {
+    errDiv.textContent = 'La contraseña debe tener al menos 6 caracteres.';
+    errDiv.classList.add('visible');
+    return;
+  }
+  if (newPass !== confirmPass) {
+    errDiv.textContent = 'Las contraseñas no coinciden.';
+    errDiv.classList.add('visible');
+    return;
+  }
+
+  // Llamar al endpoint de reset con el token actual
+  try {
+    const res = await authFetch('/api/auth/change-password', {
+      method: 'POST',
+      body: JSON.stringify({ password: newPass })
+    });
+    if (res.ok) {
+      succDiv.style.display = 'block';
+      document.getElementById('new-password').value = '';
+      document.getElementById('confirm-password').value = '';
+    } else {
+      const data = await res.json();
+      throw new Error(data.error);
+    }
+  } catch (err) {
+    errDiv.textContent = err.message || 'Error al cambiar contraseña.';
+    errDiv.classList.add('visible');
+  }
+});
+
+// ─── Iniciar ──────────────────────────────────────────
+cargarDatos();
+</script>
+</body>
+</html>

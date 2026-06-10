@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>150 Prompts de IA para Vender Más en tu Negocio | Dany Ads</title>
+  <meta name="description" content="150 prompts de IA listos para copiar, pegar y vender más. Anuncios, ventas por WhatsApp, contenido y ofertas irresistibles por solo $5 USD.">
+
+  <!-- META PIXEL CODE — pegar aquí -->
+
+  <!-- ── Google Fonts: Poppins (títulos) + Inter (cuerpo) ─────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Variables de la paleta de colores ──────────────────────────────── */
+    :root {
+      --fondo:         #0A0A0A; /* Fondo principal */
+      --acento:        #FF6B35; /* Naranja de acento */
+      --texto:         #F5F5F5; /* Texto principal */
+      --texto-sec:     #A0A0A0; /* Texto secundario */
+      --tarjeta:       #141414; /* Tarjetas y secciones */
+      --borde:         #222222; /* Bordes sutiles */
+    }
+
+    /* ── Reset básico ───────────────────────────────────────────────────── */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth; /* Scroll suave al hacer clic en anclas */
+    }
+
+    body {
+      background-color: var(--fondo);
+      color: var(--texto);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── Tipografía de títulos ──────────────────────────────────────────── */
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.2;
+    }
+
+    /* ── Contenedor centrado ────────────────────────────────────────────── */
+    .contenedor {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Marca DANY ADS reutilizable ────────────────────────────────────── */
+    .marca {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+    .marca .ads { color: var(--acento); } /* "ADS" en naranja */
+
+    /* ── Botón naranja principal (CTA) ──────────────────────────────────── */
+    .btn-cta {
+      display: inline-block;
+      background-color: var(--acento);
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      padding: 18px 40px;
+      border-radius: 12px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 8px 24px rgba(255, 107, 53, 0.25);
+    }
+    .btn-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(255, 107, 53, 0.4);
+    }
+
+    /* ── Enlace discreto "Ya soy alumno" ────────────────────────────────── */
+    .enlace-alumno {
+      color: var(--texto-sec);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+    .enlace-alumno:hover { color: var(--acento); }
+
+    /* ── Contenedor fijo superior (franja + header) ─────────────────────── */
+    .top-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    /* ── FRANJA DE OFERTA con contador regresivo ────────────────────────── */
+    .franja-oferta {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(90deg, #FF6B35, #FF8C42, #FF6B35);
+      background-size: 200% 100%;
+      color: #ffffff;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 10px 16px;
+      letter-spacing: 0.2px;
+      /* La animación "desliza-fondo" mueve el degradado de lado a lado */
+      animation: desliza-fondo 5s linear infinite;
+    }
+
+    /* Brillo que cruza la franja de izquierda a derecha */
+    .franja-oferta::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -60%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      animation: brillo-cruza 3.5s ease-in-out infinite;
+    }
+
+    .franja-oferta .texto-oferta { position: relative; z-index: 1; }
+
+    /* El contador (los números) late suavemente para llamar la atención */
+    .franja-oferta #contador {
+      display: inline-block;
+      font-weight: 800;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 2px 10px;
+      border-radius: 6px;
+      margin: 0 4px;
+      font-variant-numeric: tabular-nums;
+      animation: latido 1s ease-in-out infinite;
+    }
+
+    /* ── HEADER ─────────────────────────────────────────────────────────── */
+    header {
+      background-color: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--borde);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .header-inner .marca { font-size: 1.5rem; }
+
+    /* ── HERO ───────────────────────────────────────────────────────────── */
+    .hero {
+      padding: 80px 0 60px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .badge-urgencia {
+      display: inline-block;
+      background-color: rgba(255, 107, 53, 0.12);
+      color: var(--acento);
+      border: 1px solid rgba(255, 107, 53, 0.3);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+    /* "VENDER MÁS" con degradado naranja animado (brillo que se desplaza) */
+    .hero h1 .resalte {
+      background: linear-gradient(90deg, #FF6B35, #FFB088, #FF8C42, #FF6B35);
+      background-size: 250% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: var(--acento); /* respaldo si el navegador no soporta clip */
+      animation: brillo-texto 4s linear infinite;
+    }
+    .hero .subheadline {
+      font-size: 1.15rem;
+      color: var(--texto-sec);
+      margin-bottom: 32px;
+      max-width: 540px;
+    }
+
+    /* ── Contenedor del mockup con fondo de resplandor ──────────────────── */
+    .mockup-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Resplandor naranja difuso DETRÁS del PDF (el "fondo") */
+    .mockup-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -10%;
+      background:
+        radial-gradient(circle at 50% 45%, rgba(255, 107, 53, 0.35) 0%, transparent 60%),
+        radial-gradient(circle at 70% 70%, rgba(255, 140, 66, 0.2) 0%, transparent 55%);
+      filter: blur(20px);
+      z-index: 0;
+      animation: pulso-resplandor 4s ease-in-out infinite;
+    }
+
+    /* Anillos decorativos detrás del PDF para que no se vea vacío */
+    .mockup-wrap::after {
+      content: '';
+      position: absolute;
+      width: 115%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 107, 53, 0.12);
+      box-shadow: 0 0 0 30px rgba(255, 107, 53, 0.05);
+      z-index: 0;
+    }
+
+    /* ── Imagen real de la portada del PDF (flota suavemente) ───────────── */
+    .mockup-img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+      animation: flota 4s ease-in-out infinite;
+    }
+
+    /* ── Placeholder del mockup del PDF (respaldo si no hay imagen) ──────── */
+    .mockup-placeholder {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      background: linear-gradient(145deg, #1f1f1f, #0d0d0d);
+      border: 1px solid rgba(255, 107, 53, 0.3);
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--texto-sec);
+      padding: 24px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+      animation: flota 4s ease-in-out infinite;
+    }
+    .mockup-placeholder span { font-size: 3rem; margin-bottom: 12px; }
+
+    /* ── Secciones genéricas ────────────────────────────────────────────── */
+    section { padding: 70px 0; }
+    .seccion-titulo {
+      font-size: 2.2rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .seccion-intro {
+      text-align: center;
+      color: var(--texto-sec);
+      max-width: 640px;
+      margin: 0 auto 48px;
+      font-size: 1.1rem;
+    }
+
+    /* ── Sección DOLOR ──────────────────────────────────────────────────── */
+    .dolor-lista {
+      max-width: 720px;
+      margin: 0 auto;
+      list-style: none;
+    }
+    .dolor-lista li {
+      background-color: var(--tarjeta);
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+      color: var(--texto);
+    }
+
+    /* ── Sección SOLUCIÓN ───────────────────────────────────────────────── */
+    .solucion {
+      background-color: var(--tarjeta);
+      border-top: 1px solid var(--borde);
+      border-bottom: 1px solid var(--borde);
+    }
+    .solucion p {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.2rem;
+      color: var(--texto);
+    }
+    .solucion p .resalte { color: var(--acento); font-weight: 600; }
+
+    /* ── QUÉ INCLUYE — tarjetas ─────────────────────────────────────────── */
+    .grid-tarjetas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .tarjeta {
+      background-color: var(--tarjeta);
+      border: 1px solid var(--borde);
+      border-radius: 16px;
+      padding: 32px 28px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .tarjeta:hover {
+      transform: translateY(-4px);
+      border-color: var(--acento);
+    }
+    .tarjeta .icono { font-size: 2.4rem; display: block; margin-bottom: 16px; }
+    .tarjeta h3 { font-size: 1.15rem; font-weight: 600; }
+
+    /* ── PARA QUIÉN ES ──────────────────────────────────────────────────── */
+    .para-quien p {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.2rem;
+      color: var(--texto-sec);
+    }
+
+    /* ── PRECIO Y CTA ───────────────────────────────────────────────────── */
+    .precio-box {
+      background: linear-gradient(145deg, #161616, #0d0d0d);
+      border: 1px solid var(--borde);
+      border-radius: 24px;
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 48px 32px;
+      text-align: center;
+    }
+    .precio-antes {
+      color: var(--texto-sec);
+      text-decoration: line-through;
+      font-size: 1.5rem;
+    }
+    .precio-ahora {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 4.5rem;
+      color: var(--acento);
+      line-height: 1;
+      margin: 8px 0;
+    }
+    .precio-nota { color: var(--texto-sec); margin-bottom: 28px; }
+    .precio-seguro { color: var(--texto-sec); font-size: 0.9rem; margin-top: 16px; }
+
+    /* ── GARANTÍA ───────────────────────────────────────────────────────── */
+    .garantia-box {
+      max-width: 720px;
+      margin: 0 auto;
+      background-color: rgba(255, 107, 53, 0.08);
+      border: 1px solid rgba(255, 107, 53, 0.3);
+      border-radius: 16px;
+      padding: 36px 32px;
+      text-align: center;
+      font-size: 1.25rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+    }
+    .garantia-box .icono { font-size: 2.5rem; display: block; margin-bottom: 12px; }
+
+    /* ── FAQ acordeón ───────────────────────────────────────────────────── */
+    .faq-lista { max-width: 720px; margin: 0 auto; }
+    .faq-item {
+      background-color: var(--tarjeta);
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+    .faq-pregunta {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--texto);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      text-align: left;
+      padding: 22px 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .faq-pregunta .flecha {
+      color: var(--acento);
+      font-size: 1.4rem;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+    .faq-item.activo .flecha { transform: rotate(45deg); } /* "+" gira a "x" */
+    .faq-respuesta {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      color: var(--texto-sec);
+      padding: 0 24px;
+    }
+    .faq-item.activo .faq-respuesta {
+      max-height: 240px;
+      padding: 0 24px 22px;
+    }
+
+    /* ── CTA FINAL ──────────────────────────────────────────────────────── */
+    .cta-final {
+      background-color: var(--tarjeta);
+      border-top: 1px solid var(--borde);
+      text-align: center;
+    }
+    .cta-final h2 { font-size: 2.4rem; font-weight: 800; margin-bottom: 12px; }
+    .cta-final p { color: var(--texto-sec); font-size: 1.2rem; margin-bottom: 32px; }
+
+    /* ── FOOTER ─────────────────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--borde);
+      padding: 48px 0;
+      text-align: center;
+    }
+    footer .marca { font-size: 1.4rem; display: inline-block; margin-bottom: 16px; }
+    footer .footer-links { margin-bottom: 16px; }
+    footer .copyright { color: var(--texto-sec); font-size: 0.9rem; margin-bottom: 6px; }
+    footer .disclaimer { color: var(--texto-sec); font-size: 0.8rem; opacity: 0.7; }
+
+    /* ── Centrar bloques de botones ─────────────────────────────────────── */
+    .centro { text-align: center; }
+
+    /* ── Animación fade-in al hacer scroll ──────────────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Keyframes de las animaciones ───────────────────────────────────── */
+
+    /* Desplaza el degradado de la franja de oferta */
+    @keyframes desliza-fondo {
+      0%   { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    /* Brillo blanco que cruza la franja */
+    @keyframes brillo-cruza {
+      0%   { left: -60%; }
+      50%  { left: 100%; }
+      100% { left: 100%; }
+    }
+
+    /* Latido suave del contador */
+    @keyframes latido {
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.08); }
+    }
+
+    /* Brillo que recorre el texto "VENDER MÁS" */
+    @keyframes brillo-texto {
+      0%   { background-position: 0% 50%; }
+      100% { background-position: 250% 50%; }
+    }
+
+    /* El PDF flota de arriba a abajo */
+    @keyframes flota {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-14px); }
+    }
+
+    /* El resplandor detrás del PDF respira (cambia de intensidad/tamaño) */
+    @keyframes pulso-resplandor {
+      0%, 100% { opacity: 0.7; transform: scale(1); }
+      50%      { opacity: 1;   transform: scale(1.07); }
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────────────────── */
+    @media (max-width: 820px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero { padding: 50px 0 40px; }
+      .hero h1 { font-size: 2.2rem; }
+      .mockup-placeholder { max-width: 320px; margin: 0 auto; }
+      .seccion-titulo { font-size: 1.8rem; }
+      .precio-ahora { font-size: 3.5rem; }
+      .cta-final h2 { font-size: 1.8rem; }
+      .btn-cta { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════ FRANJA + HEADER (fijos arriba) ═══════════════ -->
+  <div class="top-sticky">
+
+    <!-- Franja de oferta con contador regresivo de 15 minutos -->
+    <div class="franja-oferta">
+      <span class="texto-oferta">
+        🔥 Oferta por tiempo limitado · termina en
+        <span id="contador">15:00</span>
+        ¡aprovechá antes de que suba el precio!
+      </span>
+    </div>
+
+    <!-- ═══════════════ 1. HEADER ═══════════════ -->
+    <header>
+      <div class="header-inner">
+        <!-- Logo: DANY en blanco + ADS en naranja -->
+        <div class="marca">DANY<span class="ads">ADS</span></div>
+        <!-- Enlace discreto para alumnos existentes -->
+        <a href="/login.html" class="enlace-alumno">Ya soy alumno · Iniciar sesión</a>
+      </div>
+    </header>
+
+  </div>
+
+  <!-- ═══════════════ 2. HERO ═══════════════ -->
+  <section class="hero">
+    <div class="contenedor">
+      <div class="hero-grid">
+        <!-- Columna izquierda: texto y CTA -->
+        <div class="fade-in">
+          <span class="badge-urgencia">🔥 Precio de lanzamiento · Solo por tiempo limitado</span>
+          <h1>150 Prompts de IA listos para copiar, pegar y <span class="resalte">VENDER MÁS</span></h1>
+          <p class="subheadline">
+            Crea anuncios, cierra ventas por WhatsApp, genera contenido y ofertas
+            irresistibles — aunque nunca hayas usado IA.
+          </p>
+          <a href="#CHECKOUT" class="btn-cta">QUIERO MIS 150 PROMPTS →</a>
+        </div>
+
+        <!-- Columna derecha: imagen real de la portada con fondo de resplandor -->
+        <div class="fade-in mockup-wrap">
+          <!--
+            Imagen de la portada. Guardá tu archivo en: public/img/portada.png
+            Si la imagen no existe todavía, se oculta automáticamente (onerror)
+            y se muestra el placeholder de abajo en su lugar.
+          -->
+          <img
+            src="/img/portada.png"
+            alt="Portada del ebook: 150 Prompts de IA para Vender Más"
+            class="mockup-img"
+            onerror="this.style.display='none'; document.getElementById('mockup-fallback').style.display='flex';"
+          />
+
+          <!-- Respaldo: visible solo si la imagen aún no está cargada -->
+          <div class="mockup-placeholder" id="mockup-fallback" style="display:none;">
+            <span>📘</span>
+            Guardá tu portada en<br><strong>public/img/portada.png</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 3. SECCIÓN DOLOR ═══════════════ -->
+  <section>
+    <div class="contenedor">
+      <h2 class="seccion-titulo fade-in">¿Te suena esto?</h2>
+      <ul class="dolor-lista">
+        <li class="fade-in">❌ No sabés qué publicar en redes y perdés horas pensando</li>
+        <li class="fade-in">❌ Tus anuncios no venden y no sabés por qué</li>
+        <li class="fade-in">❌ Te escriben interesados pero no lográs cerrar la venta</li>
+        <li class="fade-in">❌ Usás ChatGPT pero te da respuestas genéricas que no sirven</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 4. SECCIÓN SOLUCIÓN ═══════════════ -->
+  <section class="solucion">
+    <div class="contenedor">
+      <h2 class="seccion-titulo fade-in">La solución</h2>
+      <p class="fade-in">
+        Imaginá tener <span class="resalte">150 prompts probados</span>, listos para usar,
+        que hacen que la IA trabaje para <span class="resalte">tu negocio específico</span>.
+        Solo copiás, pegás y obtenés anuncios, mensajes de venta, contenido y ofertas
+        que de verdad convierten — sin pensar, sin trabarte, sin experiencia previa.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 5. QUÉ INCLUYE ═══════════════ -->
+  <section>
+    <div class="contenedor">
+      <h2 class="seccion-titulo fade-in">¿Qué incluye?</h2>
+      <p class="seccion-intro fade-in">150 prompts organizados en 5 categorías clave para tu negocio.</p>
+      <div class="grid-tarjetas">
+        <div class="tarjeta fade-in">
+          <span class="icono">📢</span>
+          <h3>30 prompts para anuncios de Facebook e Instagram</h3>
+        </div>
+        <div class="tarjeta fade-in">
+          <span class="icono">💬</span>
+          <h3>30 prompts para cerrar ventas por WhatsApp</h3>
+        </div>
+        <div class="tarjeta fade-in">
+          <span class="icono">📱</span>
+          <h3>30 prompts para contenido de redes sociales</h3>
+        </div>
+        <div class="tarjeta fade-in">
+          <span class="icono">📧</span>
+          <h3>30 prompts para emails y seguimiento</h3>
+        </div>
+        <div class="tarjeta fade-in">
+          <span class="icono">🎯</span>
+          <h3>30 prompts para crear ofertas irresistibles</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 6. PARA QUIÉN ES ═══════════════ -->
+  <section class="para-quien solucion">
+    <div class="contenedor">
+      <h2 class="seccion-titulo fade-in">¿Para quién es?</h2>
+      <p class="fade-in">
+        Emprendedores, vendedores, dueños de negocio y freelancers que quieren
+        vender más usando IA sin complicarse.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 7. PRECIO Y CTA PRINCIPAL ═══════════════ -->
+  <section>
+    <div class="contenedor">
+      <div class="precio-box fade-in">
+        <span class="precio-antes">$97</span>
+        <div class="precio-ahora">$5 USD</div>
+        <p class="precio-nota">Precio de lanzamiento · Acceso inmediato</p>
+        <a href="#CHECKOUT" class="btn-cta">DESCARGAR AHORA POR $5 →</a>
+        <p class="precio-seguro">🔒 Pago seguro · Garantía de 7 días</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 8. GARANTÍA ═══════════════ -->
+  <section>
+    <div class="contenedor">
+      <div class="garantia-box fade-in">
+        <span class="icono">🛡️</span>
+        Si en 7 días no te sirve, te devuelvo tu dinero.
+        Sin preguntas. Sin complicaciones.
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 9. FAQ ACORDEÓN ═══════════════ -->
+  <section>
+    <div class="contenedor">
+      <h2 class="seccion-titulo fade-in">Preguntas frecuentes</h2>
+      <div class="faq-lista">
+
+        <div class="faq-item fade-in">
+          <button class="faq-pregunta">
+            ¿Cómo recibo el producto?
+            <span class="flecha">+</span>
+          </button>
+          <div class="faq-respuesta">
+            <p>Acceso inmediato tras el pago. Recibes el PDF en tu correo.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-pregunta">
+            ¿Necesito saber de tecnología?
+            <span class="flecha">+</span>
+          </button>
+          <div class="faq-respuesta">
+            <p>No. Todo está explicado paso a paso para cualquier persona.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-pregunta">
+            ¿Sirve para cualquier tipo de negocio?
+            <span class="flecha">+</span>
+          </button>
+          <div class="faq-respuesta">
+            <p>Sí. Los prompts son adaptables a cualquier rubro o producto.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-pregunta">
+            ¿Con qué IA funciona?
+            <span class="flecha">+</span>
+          </button>
+          <div class="faq-respuesta">
+            <p>Con Claude, ChatGPT, Gemini o cualquier IA de texto.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-pregunta">
+            ¿Puedo pedir reembolso?
+            <span class="flecha">+</span>
+          </button>
+          <div class="faq-respuesta">
+            <p>Sí. 7 días de garantía total. Un email y te devolvemos todo.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 10. CTA FINAL ═══════════════ -->
+  <section class="cta-final">
+    <div class="contenedor">
+      <h2 class="fade-in">Tu competencia ya está usando IA. ¿Y vos?</h2>
+      <p class="fade-in">150 prompts probados por $5. Menos que un café.</p>
+      <div class="centro fade-in">
+        <a href="#CHECKOUT" class="btn-cta">QUIERO MIS 150 PROMPTS AHORA →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 11. FOOTER ═══════════════ -->
+  <footer>
+    <div class="contenedor">
+      <div class="marca">DANY<span class="ads">ADS</span></div>
+      <div class="footer-links">
+        <a href="/login.html" class="enlace-alumno">Ya soy alumno · Iniciar sesión</a>
+      </div>
+      <p class="copyright">© 2025 Dany Ads · Daniel Alvarado. Todos los derechos reservados.</p>
+      <p class="disclaimer">Este producto no garantiza resultados específicos.</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════ JAVASCRIPT PURO ═══════════════ -->
+  <script>
+    /* ── Contador regresivo de la oferta (15 minutos) ───────────────────── */
+    // Empieza en 15:00 y baja segundo a segundo hasta 00:00.
+    // Usamos localStorage para que, si el visitante recarga la página,
+    // el contador continúe desde donde iba (y no se reinicie cada vez).
+    (function () {
+      const elemento = document.getElementById('contador');
+      const DURACION = 15 * 60 * 1000; // 15 minutos en milisegundos
+      const CLAVE = 'dany_oferta_fin';
+
+      // Recuperar (o crear) la hora de finalización guardada
+      let fin = parseInt(localStorage.getItem(CLAVE), 10);
+      const ahora = Date.now();
+      if (!fin || isNaN(fin) || fin < ahora) {
+        fin = ahora + DURACION;
+        localStorage.setItem(CLAVE, fin);
+      }
+
+      function actualizar() {
+        const restante = fin - Date.now();
+
+        if (restante <= 0) {
+          elemento.textContent = '00:00';
+          clearInterval(intervalo);
+          return;
+        }
+
+        // Convertir milisegundos a minutos:segundos con dos dígitos
+        const minutos = Math.floor(restante / 60000);
+        const segundos = Math.floor((restante % 60000) / 1000);
+        const mm = String(minutos).padStart(2, '0');
+        const ss = String(segundos).padStart(2, '0');
+        elemento.textContent = mm + ':' + ss;
+      }
+
+      actualizar(); // Pintar de inmediato (sin esperar 1 segundo)
+      const intervalo = setInterval(actualizar, 1000);
+    })();
+
+    /* ── FAQ acordeón ───────────────────────────────────────────────────── */
+    // Al hacer clic en una pregunta, se abre/cierra su respuesta.
+    // Se cierran las demás para mostrar solo una a la vez.
+    const preguntas = document.querySelectorAll('.faq-pregunta');
+    preguntas.forEach(function (boton) {
+      boton.addEventListener('click', function () {
+        const item = boton.parentElement;
+        const yaActivo = item.classList.contains('activo');
+
+        // Cerrar todas las preguntas
+        document.querySelectorAll('.faq-item').forEach(function (i) {
+          i.classList.remove('activo');
+        });
+
+        // Si la que se clicó no estaba abierta, abrirla
+        if (!yaActivo) {
+          item.classList.add('activo');
+        }
+      });
+    });
+
+    /* ── Animación fade-in al hacer scroll ──────────────────────────────── */
+    // Usamos IntersectionObserver para detectar cuándo cada elemento
+    // entra en pantalla y agregarle la clase "visible".
+    const observador = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (entrada) {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add('visible');
+          observador.unobserve(entrada.target); // Animar solo una vez
+        }
+      });
+    }, {
+      threshold: 0.15 // Se activa cuando el 15% del elemento es visible
+    });
+
+    // Observar todos los elementos con la clase "fade-in"
+    document.querySelectorAll('.fade-in').forEach(function (el) {
+      observador.observe(el);
+    });
+  </script>
+
+</body>
+</html>

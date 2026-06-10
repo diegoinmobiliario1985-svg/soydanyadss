@@ -1,0 +1,12 @@
+node_modules/
+.env
+uploads/videos/*
+!uploads/videos/.gitkeep
+database/*.db
+*.db
+# Archivos auxiliares de SQLite (WAL / shared-memory) — también contienen datos
+*.db-shm
+*.db-wal
+database/*.db-*
+# Configuración local de Claude Code (no pertenece al repo)
+.claude/
